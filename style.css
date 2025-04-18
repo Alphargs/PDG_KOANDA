@@ -1,0 +1,229 @@
+/* CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    height: 100%;
+    font-family: Arial, sans-serif;
+    color: white;
+    overflow-x: hidden;
+  }
+  
+  .hero {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .hero video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+  }
+  
+  .glass-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+  }
+  
+  .gallery {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #111;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 5vw;
+    gap: 30px;
+  }
+  
+  .gallery-container {
+    display: flex;
+    gap: 30px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 20px;
+  }
+  
+  .gallery-container img {
+    scroll-snap-align: center;
+    flex-shrink: 0;
+    width: 250px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 20px;
+    transition: transform 0.4s ease, filter 0.4s ease;
+    filter: blur(3px) brightness(0.5);
+    transform: rotateY(15deg) scale(0.9);
+    cursor: pointer;
+  }
+  
+  .gallery-container img:hover,
+  .gallery-container img:focus {
+    filter: blur(0) brightness(1);
+    transform: rotateY(0deg) scale(1.05);
+    z-index: 2;
+  }
+  
+  .buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .cta-btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background: #00e676;
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 30px;
+    box-shadow: 0 0 10px rgba(0, 230, 118, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .cta-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 230, 118, 0.7);
+  }
+  
+  .voir-plus {
+    background: #2196f3;
+    box-shadow: 0 0 10px rgba(33, 150, 243, 0.5);
+  }
+  
+  .voir-plus:hover {
+    box-shadow: 0 0 20px rgba(33, 150, 243, 0.8);
+  }
+  
+  .x {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 40px;
+    color: #111;
+  }
+  
+  .fin {
+    background-color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+  }
+  
+  .localisation {
+    background: #ed991b;
+    box-shadow: 0 0 10px rgba(91, 23, 11, 0.5);
+    margin: 0;
+    color: white;
+  }
+  
+  .localisation:hover {
+    box-shadow: 0 0 20px rgba(245, 253, 93, 0.8);
+    margin: 0;
+  }
+  
+  @media (max-width: 600px) {
+    .glass-box h1 {
+      font-size: 1.5em;
+    }
+  
+    .glass-box p {
+      font-size: 1em;
+    }
+  
+    .gallery-container img {
+      width: 180px;
+      height: 260px;
+    }
+  }
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background: #0a0a0a;
+    color: white;
+    font-family: 'Arial', sans-serif;
+    padding: 30px 20px;
+  }
+  
+  h1 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 40px;
+  }
+  
+  .image-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .image-card {
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeInUp 0.6s ease forwards;
+  }
+  
+  .image-card:nth-child(1) { animation-delay: 0.1s; }
+  .image-card:nth-child(2) { animation-delay: 0.2s; }
+  .image-card:nth-child(3) { animation-delay: 0.3s; }
+  .image-card:nth-child(4) { animation-delay: 0.4s; }
+  .image-card:nth-child(5) { animation-delay: 0.5s; }
+  .image-card:nth-child(6) { animation-delay: 0.6s; }
+  .image-card:nth-child(7) { animation-delay: 0.7s; }
+  .image-card:nth-child(8) { animation-delay: 0.8s; }
+  .image-card:nth-child(9) { animation-delay: 0.9s; }
+  .image-card:nth-child(10) { animation-delay: 1s; }
+  
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .image-card img {
+    width: 100%;
+    max-width: 500px;
+    display: block;
+    margin: 0 auto;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+  }
+  
+  @media (max-width: 600px) {
+    h1 {
+      font-size: 1.5em;
+    }
+  
+    .image-card img {
+      width: 100%;
+      height: auto;
+    }
+  }
+    
